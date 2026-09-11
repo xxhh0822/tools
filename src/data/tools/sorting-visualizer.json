@@ -1,0 +1,11 @@
+{
+  "id": "sorting-visualizer",
+  "name": "排序算法演示",
+  "description": "通过动画逐步理解常见排序算法",
+  "url": "https://sort.yierbubu.store/",
+  "category": "developer",
+  "tags": ["排序", "算法", "动画"],
+  "icon": "Grid",
+  "accent": "blue",
+  "order": 50
+}

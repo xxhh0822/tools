@@ -30,6 +30,7 @@ describe('filterTools', () => {
         { id: 'json-formatter', url: 'https://json.yierbubu.store/' },
         { id: 'time-calculator', url: 'https://time.yierbubu.store/' },
         { id: 'lucky-picker', url: 'https://lucky.yierbubu.store/' },
+        { id: 'sorting-visualizer', url: 'https://sort.yierbubu.store/' },
       ]),
     )
   })
