@@ -1,0 +1,11 @@
+{
+  "id": "json-formatter",
+  "name": "JSON 格式化",
+  "description": "格式化、压缩并检查 JSON 数据",
+  "url": "https://json.yierbubu.store/",
+  "category": "text-data",
+  "tags": ["JSON", "格式化"],
+  "icon": "Code",
+  "accent": "blue",
+  "order": 10
+}

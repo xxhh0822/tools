@@ -1,0 +1,6 @@
+[
+  { "id": "text-data", "name": "文本与数据", "icon": "Code", "order": 10 },
+  { "id": "image-media", "name": "图片与媒体", "icon": "Image", "order": 20 },
+  { "id": "developer", "name": "开发辅助", "icon": "Code", "order": 30 },
+  { "id": "efficiency", "name": "效率与计算", "icon": "Calculator", "order": 40 }
+]

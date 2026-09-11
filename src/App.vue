@@ -1,19 +1,12 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
-import { ArrowUpRight, Calculator, Code, Image, Search3 } from 'reicon-vue'
+import { ArrowUpRight, Search3 } from 'reicon-vue'
 import { categories, filterTools, tools, type CategoryFilter } from './catalog'
 
 const activeCategory = ref<CategoryFilter>('all')
 const searchText = ref('')
 const searchExpanded = ref(false)
 const searchInput = ref<HTMLInputElement | null>(null)
-
-const categoryIcons = {
-  'text-data': Code,
-  'image-media': Image,
-  developer: Code,
-  efficiency: Calculator,
-} as const
 
 const visibleCategories = computed(() =>
   categories.filter(
@@ -116,7 +109,7 @@ function clearFilters() {
             @click="selectCategory(category.id)"
           >
             <component
-              :is="categoryIcons[category.id as keyof typeof categoryIcons]"
+              :is="category.icon"
               v-if="category.id !== 'all'"
               :size="18"
               aria-hidden="true"
