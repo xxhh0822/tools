@@ -212,7 +212,7 @@ a {
   border-color: #5664f7;
   color: #fff;
   background: linear-gradient(135deg, #5664f7, #7169f8);
-  box-shadow: 0 8px 20px rgba(79, 94, 247, 0.24);
+  box-shadow: 0 3px 8px rgba(79, 94, 247, 0.18);
 }
 
 .catalog-section {
