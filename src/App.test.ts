@@ -31,4 +31,14 @@ describe('App', () => {
     expect(wrapper.get('.hero').text()).toContain('简单、直接、随手可用')
     expect(wrapper.get('.hero').text()).not.toContain('ONLINE TOOLBOX')
   })
+
+  it('uses an accessible GitHub icon in the header', () => {
+    const wrapper = mount(App)
+    const link = wrapper.get('.github-link')
+
+    expect(link.attributes('href')).toBe('https://github.com/xxhh0822')
+    expect(link.attributes('aria-label')).toBe('GitHub 主页')
+    expect(link.find('svg').exists()).toBe(true)
+    expect(link.text()).toBe('')
+  })
 })
