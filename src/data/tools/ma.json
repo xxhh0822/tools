@@ -1,0 +1,11 @@
+{
+  "id": "ma",
+  "name": "条形码、二维码生成",
+  "description": "内容全部在浏览器本地处理，不上传任何服务器",
+  "url": "https://ma.yierbubu.store/",
+  "category": "image-media",
+  "tags": ["条形码", "二维码"],
+  "icon": "Image",
+  "accent": "green",
+  "order": 40
+}
