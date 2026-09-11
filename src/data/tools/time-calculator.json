@@ -3,7 +3,7 @@
   "name": "时间计算器",
   "description": "日期差值与时间单位换算",
   "url": "https://time.yierbubu.store/",
-  "category": "efficiency",
+  "category": "date-time",
   "tags": ["时间", "计算"],
   "icon": "Calendar",
   "accent": "orange",

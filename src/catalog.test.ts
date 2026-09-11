@@ -37,7 +37,7 @@ describe('filterTools', () => {
   })
 
   it('filters by category', () => {
-    expect(filterTools(tools, 'efficiency', '')).toEqual([
+    expect(filterTools(tools, 'date-time', '')).toEqual([
       expect.objectContaining({ id: 'time-calculator' }),
     ])
   })

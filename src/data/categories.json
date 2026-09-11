@@ -1,6 +1,8 @@
 [
   { "id": "text-data", "name": "文本与数据", "icon": "Code", "order": 10 },
-  { "id": "image-media", "name": "图片与媒体", "icon": "Image", "order": 20 },
-  { "id": "developer", "name": "开发辅助", "icon": "Code", "order": 30 },
-  { "id": "efficiency", "name": "效率与计算", "icon": "Calculator", "order": 40 }
+  { "id": "developer", "name": "开发辅助", "icon": "BrowserCode", "order": 20 },
+  { "id": "image-media", "name": "图片与媒体", "icon": "Image", "order": 30 },
+  { "id": "calculation", "name": "计算与转换", "icon": "Calculator", "order": 40 },
+  { "id": "date-time", "name": "时间与日期", "icon": "Calendar", "order": 50 },
+  { "id": "lifestyle", "name": "生活娱乐", "icon": "TicketStar", "order": 60 }
 ]
