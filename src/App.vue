@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, nextTick, ref } from 'vue'
 import { ArrowUpRight, Calculator, Code, Image, Search3 } from 'reicon-vue'
 import { categories, filterTools, tools, type CategoryFilter } from './catalog'
 
 const activeCategory = ref<CategoryFilter>('all')
 const searchText = ref('')
+const searchExpanded = ref(false)
+const searchInput = ref<HTMLInputElement | null>(null)
 
 const categoryIcons = {
   'text-data': Code,
@@ -27,6 +29,29 @@ const visibleTools = computed(() =>
 function selectCategory(category: CategoryFilter) {
   activeCategory.value = category
 }
+
+async function expandSearch() {
+  searchExpanded.value = true
+  await nextTick()
+  searchInput.value?.focus()
+}
+
+function collapseSearchIfEmpty() {
+  if (!searchText.value.trim()) {
+    searchExpanded.value = false
+  }
+}
+
+function closeSearch() {
+  searchText.value = ''
+  searchExpanded.value = false
+}
+
+function clearFilters() {
+  searchText.value = ''
+  activeCategory.value = 'all'
+  searchExpanded.value = false
+}
 </script>
 
 <template>
@@ -36,33 +61,49 @@ function selectCategory(category: CategoryFilter) {
         <span class="brand-mark" aria-hidden="true">{ }</span>
         <span>工具集</span>
       </a>
-      <a
-        class="github-link"
-        href="https://github.com/xxhh0822"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-        <ArrowUpRight :size="18" aria-hidden="true" />
-      </a>
+      <div class="header-actions">
+        <div class="header-search" :class="{ expanded: searchExpanded }">
+          <button
+            v-if="!searchExpanded"
+            class="header-search-trigger"
+            type="button"
+            aria-label="展开搜索"
+            :aria-expanded="searchExpanded"
+            @click="expandSearch"
+          >
+            <Search3 :size="21" aria-hidden="true" />
+          </button>
+          <label v-else class="header-search-field">
+            <Search3 :size="19" aria-hidden="true" />
+            <span class="sr-only">搜索工具</span>
+            <input
+              ref="searchInput"
+              v-model="searchText"
+              type="search"
+              placeholder="搜索工具"
+              autocomplete="off"
+              @blur="collapseSearchIfEmpty"
+              @keydown.esc="closeSearch"
+            />
+          </label>
+        </div>
+
+        <a
+          class="github-link"
+          href="https://github.com/xxhh0822"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>GitHub</span>
+          <ArrowUpRight :size="18" aria-hidden="true" />
+        </a>
+      </div>
     </header>
 
     <main>
       <section class="hero" aria-labelledby="page-title">
-        <p class="eyebrow">ONLINE TOOLBOX</p>
         <h1 id="page-title">简单、直接、随手可用</h1>
         <p class="hero-description">收集常用的在线小工具，让每一次处理都更高效。</p>
-
-        <label class="search-box">
-          <Search3 :size="23" aria-hidden="true" />
-          <span class="sr-only">搜索工具</span>
-          <input
-            v-model="searchText"
-            type="search"
-            placeholder="搜索工具、功能或标签"
-            autocomplete="off"
-          />
-        </label>
 
         <nav class="category-scroller" aria-label="工具分类">
           <button
@@ -123,7 +164,7 @@ function selectCategory(category: CategoryFilter) {
           <Search3 :size="34" aria-hidden="true" />
           <h2>没有找到相关工具</h2>
           <p>换个关键词，或者选择其他分类试试。</p>
-          <button type="button" @click="searchText = ''; activeCategory = 'all'">清除筛选</button>
+          <button type="button" @click="clearFilters">清除筛选</button>
         </div>
       </section>
     </main>

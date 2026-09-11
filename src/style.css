@@ -90,73 +90,93 @@ a {
 
 .github-link:hover { color: #4f5ef7; }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-search {
+  width: 44px;
+  height: 44px;
+  transition: width 200ms ease;
+}
+
+.header-search.expanded { width: 280px; }
+
+.header-search-trigger,
+.header-search-field {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  border: 1px solid #e0e5f0;
+  border-radius: 14px;
+  color: #263657;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 5px 16px rgba(36, 54, 106, 0.05);
+}
+
+.header-search-trigger {
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+
+.header-search-trigger:hover {
+  border-color: #cbd2ef;
+  color: #4f5ef7;
+  background: #fff;
+}
+
+.header-search-field {
+  gap: 9px;
+  padding: 0 13px;
+  border-color: #aeb7f6;
+  box-shadow: 0 0 0 3px rgba(79, 94, 247, 0.08);
+}
+
+.header-search-field input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  color: #121d3d;
+  background: transparent;
+  font-size: 14px;
+}
+
+.header-search-field input::placeholder { color: #929bb0; }
+
 .hero {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 82px 0 38px;
+  padding: 48px 0 26px;
   text-align: center;
-}
-
-.eyebrow {
-  margin: 0 0 14px;
-  color: #6671df;
-  font-size: 12px;
-  font-weight: 750;
-  letter-spacing: 0.14em;
 }
 
 .hero h1 {
   margin: 0;
   color: #0b1535;
-  font-size: clamp(36px, 4.2vw, 56px);
-  line-height: 1.17;
-  letter-spacing: -0.045em;
+  font-size: clamp(32px, 3.2vw, 44px);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
 }
 
 .hero-description {
-  margin: 18px 0 0;
+  margin: 12px 0 0;
   color: #66708d;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.7;
 }
-
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  width: min(100%, 720px);
-  height: 62px;
-  margin: 42px auto 26px;
-  padding: 0 22px;
-  border: 1px solid #dfe4f0;
-  border-radius: 19px;
-  color: #1f2e58;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 13px 36px rgba(36, 54, 106, 0.08);
-  transition: border-color 160ms ease, box-shadow 160ms ease;
-}
-
-.search-box:focus-within {
-  border-color: #8892ff;
-  box-shadow: 0 0 0 4px rgba(79, 94, 247, 0.1), 0 13px 36px rgba(36, 54, 106, 0.08);
-}
-
-.search-box input {
-  width: 100%;
-  border: 0;
-  outline: 0;
-  color: #121d3d;
-  background: transparent;
-  font-size: 16px;
-}
-
-.search-box input::placeholder { color: #8a94af; }
 
 .category-scroller {
   display: flex;
   justify-content: center;
   gap: 10px;
   overflow-x: auto;
+  margin-top: 24px;
   padding: 4px 2px 8px;
   scrollbar-width: none;
 }
@@ -371,15 +391,25 @@ a.tool-card:hover {
   .page-shell { padding: 0 18px; }
   .site-header { height: 70px; }
 
+  .header-actions { gap: 6px; }
+
+  .header-search.expanded { width: min(48vw, 210px); }
+
+  .github-link {
+    justify-content: center;
+    width: 40px;
+    padding: 0;
+  }
+
+  .github-link span { display: none; }
+
   .hero {
-    padding: 50px 0 27px;
+    padding: 32px 0 22px;
     text-align: left;
   }
 
-  .eyebrow { margin-bottom: 10px; }
-
   .hero h1 {
-    font-size: 34px;
+    font-size: 30px;
     letter-spacing: -0.04em;
   }
 
@@ -389,14 +419,9 @@ a.tool-card:hover {
     font-size: 15px;
   }
 
-  .search-box {
-    height: 56px;
-    margin: 30px 0 18px;
-    border-radius: 17px;
-  }
-
   .category-scroller {
     justify-content: flex-start;
+    margin-top: 20px;
     margin-right: -18px;
     padding-right: 18px;
   }
