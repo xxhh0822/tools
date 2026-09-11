@@ -1,0 +1,11 @@
+{
+  "id": "lucky-picker",
+  "name": "幸运选号",
+  "description": "双色球与大乐透随机选号，支持一次生成 1、3 或 5 注号码",
+  "url": "https://lucky.yierbubu.store/",
+  "category": "other",
+  "tags": ["双色球", "大乐透", "随机选号"],
+  "icon": "TicketStar",
+  "accent": "purple",
+  "order": 30
+}

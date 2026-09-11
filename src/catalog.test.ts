@@ -22,10 +22,11 @@ function validTool(overrides: Record<string, unknown> = {}) {
 }
 
 describe('filterTools', () => {
-  it('contains only the two configured live tools', () => {
+  it('contains the configured live tools', () => {
     expect(tools.map(({ id, url }) => ({ id, url }))).toEqual([
       { id: 'json-formatter', url: 'https://json.yierbubu.store/' },
       { id: 'time-calculator', url: 'https://time.yierbubu.store/' },
+      { id: 'lucky-picker', url: 'https://lucky.yierbubu.store/' },
     ])
   })
 

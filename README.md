@@ -42,7 +42,7 @@ npm run dev
 
 当前可以直接使用以下 Reicon 名称：
 
-`Box`、`BrowserCode`、`Calculator`、`Calendar`、`Clock`、`Code`、`Document`、`Grid`、`Image`、`Search3`、`TextTool`
+`Box`、`BrowserCode`、`Calculator`、`Calendar`、`Clock`、`Code`、`Document`、`Grid`、`Image`、`Search3`、`TicketStar`、`TextTool`
 
 需要其他 Reicon 图标时，只在 `src/catalog-icons.ts` 中导入并加入 `catalogIconMap`。可在 [Reicon](https://reicon.dev/) 查询图标名称。
 

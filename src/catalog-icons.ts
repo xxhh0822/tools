@@ -10,6 +10,7 @@ import {
   Grid,
   Image,
   Search3,
+  TicketStar,
   TextTool,
 } from 'reicon-vue'
 
@@ -24,6 +25,7 @@ export const catalogIconMap = {
   Grid,
   Image,
   Search3,
+  TicketStar,
   TextTool,
 } satisfies Record<string, Component>
 
