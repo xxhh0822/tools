@@ -24,12 +24,14 @@ function validTool(overrides: Record<string, unknown> = {}) {
 }
 
 describe('filterTools', () => {
-  it('contains the configured live tools', () => {
-    expect(tools.map(({ id, url }) => ({ id, url }))).toEqual([
-      { id: 'json-formatter', url: 'https://json.yierbubu.store/' },
-      { id: 'time-calculator', url: 'https://time.yierbubu.store/' },
-      { id: 'lucky-picker', url: 'https://lucky.yierbubu.store/' },
-    ])
+  it('contains the required live tools without restricting configured additions', () => {
+    expect(tools.map(({ id, url }) => ({ id, url }))).toEqual(
+      expect.arrayContaining([
+        { id: 'json-formatter', url: 'https://json.yierbubu.store/' },
+        { id: 'time-calculator', url: 'https://time.yierbubu.store/' },
+        { id: 'lucky-picker', url: 'https://lucky.yierbubu.store/' },
+      ]),
+    )
   })
 
   it('returns every tool when no filter is active', () => {
