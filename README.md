@@ -44,6 +44,8 @@ npm run dev
 
 `Box`、`BrowserCode`、`Calculator`、`Calendar`、`Clock`、`Code`、`Document`、`Grid`、`Image`、`Search3`、`TicketStar`、`TextTool`
 
+图标预览和推荐用途参见 [`src/data/ICON_MAP.md`](src/data/ICON_MAP.md)。
+
 需要其他 Reicon 图标时，只在 `src/catalog-icons.ts` 中导入并加入 `catalogIconMap`。可在 [Reicon](https://reicon.dev/) 查询图标名称。
 
 ## 验证

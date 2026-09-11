@@ -1,5 +1,7 @@
+import { existsSync, readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { describe, expect, it } from 'vitest'
-import { defaultCatalogIcon } from './catalog-icons'
+import { defaultCatalogIcon, supportedCatalogIconNames } from './catalog-icons'
 import { buildCatalog, filterTools, tools } from './catalog'
 
 const testCategories = [
@@ -131,5 +133,15 @@ describe('filterTools', () => {
     expect(unsafe.tools).toEqual([])
     expect(productionLocalhost.tools).toEqual([])
     expect(developmentLocalhost.tools).toHaveLength(1)
+  })
+
+  it('documents every supported icon and provides a local preview', () => {
+    const dataDirectory = resolve(process.cwd(), 'src/data')
+    const guide = readFileSync(resolve(dataDirectory, 'ICON_MAP.md'), 'utf8')
+
+    supportedCatalogIconNames.forEach((name) => {
+      expect(guide).toContain(`\`${name}\``)
+      expect(existsSync(resolve(dataDirectory, 'icon-previews', `${name}.svg`))).toBe(true)
+    })
   })
 })
